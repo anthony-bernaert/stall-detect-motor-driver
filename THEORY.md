@@ -1,4 +1,4 @@
-# Theory of operation
+# How it works
 ## Motor drive control
 The control circuit consists of a DRV8251A motor driver, which has two inputs (IN1 and IN2) allowing to drive the motor as follows:
 | IN1 | IN2 | Action         |
@@ -19,7 +19,7 @@ The input signal SW1_N is assumed to be active-low and has a pull-up (R1). Furth
 ## Stall detection
 The DRV8251A chip internally uses [current mirrors](https://en.wikipedia.org/wiki/Current_mirror) to eliminate the need for shunt resistors to measure instantaneous motor current. It has an output pin called "IPROPI" through which a current flows that is proportional to the instantaneous motor current (scaling factor: 1575 µA/A typ.).
 
-<img width="754" alt="image" src="https://github.com/user-attachments/assets/d58c3fad-66d1-4177-9427-de336d743ac9">
+<img width="754" alt="image" src="https://github.com/user-attachments/assets/30c22100-163a-4acb-8d0b-f378971271da">
 
 Using Ohm's law, the output current of this pin can easily be converted to a voltage by placing a parallel resistor to ground. The voltage on this pin now becomes 
 
